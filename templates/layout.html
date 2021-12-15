@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>Restaurant</title>
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/main.css" media="screen" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="static/css/bootstrap.css">
+        <link rel="stylesheet" href="static/css/style-portfolio.css">
+        <link rel="stylesheet" href="static/css/picto-foundry-food.css" />
+        <link rel="stylesheet" href="static/css/jquery-ui.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="static/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="icon" href="favicon-1.ico" type="image/x-icon">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">24 Hours Italian Restaurant</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav main-nav  clear navbar-right ">
+                            <li><a class="navactive color_animation" href="#top">WELCOME</a></li>
+                            <li><a class="color_animation" href="#menu">MENU</a></li>
+                            <li><a class="color_animation" href="#reservation">TIMING</a></li>
+                            <li><a class="color_animation" href="#story">ABOUT</a></li>
+                            <li><a class="color_animation" href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+         
+        <div id="top" class="starter_container bg">
+            <div class="follow_container">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="top-title">24 Hours Italian Restaurant</h2>
+                    <h2 class="white second-title">" Italian ( Sole Trader) "</h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+
+        {% block body %}
+
+        {% endblock %}
+
+        
+        <!-- ============ Footer Section  ============= -->
+        
+        <footer class="sub_footer">
+            <div class="container">
+                <div class="col-md-6">
+                    <span class="social_heading"></span>                     
+                        <ul class="social_icons" style="margin-left: 4rem ; margin-right: 4rem;">
+                            <li> <i class="fa fa-map-marker"></i>  Unit 1, Chancerygate Industrial Cent, Horton Close, West Drayton UB7 8EW. United Kingdom</li>
+                </div>
+
+                <div class="col-md-6">
+                        <span class="social_heading">FOLLOW</span>
+                        
+                        <ul class="social_icons" style="margin-left: 4rem ; margin-right: 4rem;">
+                            <li><a href="mailto:Clearbusiness.adrianvenoin@gmail.com"><i class="fa fa-envelope-o"></i> Clearbusiness.adrianvenoin@gmail.com</a></li>
+                            <li><a href="tel:01895447000"><i class="fa fa-phone"></i> (018) 95447000 </a></li>
+                        </ul>
+                    
+
+                </div>
+                    
+                </div>
+        </footer>
+
+
+        <script type="text/javascript" src="static/js/jquery-1.10.2.min.js"> </script>
+        <script type="text/javascript" src="static/js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>     
+        <script type="text/javascript" src="static/js/jquery.mixitup.min.js" ></script>
+        <script type="text/javascript" src="static/js/main.js" ></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            //mail 
+            function sendEmail() {
+
+                var txtsender = "isrargul00@gmail.com"
+                var txtpass = "apsbtudhjgwaycwi"
+                var txtname = document.getElementById("txtname").value;
+                var txtemail = document.getElementById("txtemail").value;
+                var txtnumber = document.getElementById("txtnumber").value;
+                var txtmessage = document.getElementById("txtmessage").value;
+
+                var txtmsg = "Welcome to 24 Hours Italian Restaurant !<br><br>Hi, "+txtname+", Thank you for contant from 24 Hours Italian Restaurant. <br>Have a good day!!";
+                var txtre ="Contact by !<br><br>Name: "+txtname+", Contact: "+txtnumber+", " + txtemail + "<br><br> message: "+txtmsg+"!!";
+                
+                txtname = document.getElementById("txtname").value = "";
+                txtemail = document.getElementById("txtemail").value ="";
+                txtnumber = document.getElementById("txtnumber").value = "";
+                txtmessage = document.getElementById("txtmessage").value = "";
+
+                Email.send({
+                Host: "smtp.gmail.com",
+                // <sender’s email address>
+                Username : txtsender,
+                
+                Password : "apsbtudhjgwaycwi",
+                To : txtsender,
+                 // <sender’s email address>
+                From : txtsender,
+                
+                Subject : "24 Hours Italian Restaurant",
+                Body : txtre,
+                });
+                
+                Email.send({
+                Host: "smtp.gmail.com",
+                // <sender’s email address>
+                Username : txtsender,
+                Password : txtpass,
+                To : txtemail,
+                 // <sender’s email address>
+                From : txtsender,
+                Subject : "24 Hours Italian Restaurant",
+                Body : txtmsg,
+                }).then(
+                    message => swal("Good job!", "Thank you!", "success")
+                    );
+            
+                    // setTimeout("location.href = 'index.html';", 4000);
+            }
+               
+        </script>
+
+    </body>
+
+</html>

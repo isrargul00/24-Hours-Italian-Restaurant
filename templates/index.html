@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block body%}
+    <!-- ============ menu  ============= -->
+
+
+        <section id ="menu" class="description_content">
+             <div class="pricing background_content">
+                <h1><span>Menu</span></h1>
+             </div>
+            <div class="text-content container"> 
+                <div class="container">
+                    <div class="row">
+                        <div id="w">
+                            <ul id="filter-list" class="clearfix">
+                                <li class="filter" data-filter="all">All</li>
+                                <li class="filter" data-filter="breakfast">Breakfast</li>
+                                <li class="filter" data-filter="special">Special</li>
+                                <li class="filter" data-filter="desert">Desert</li>
+                                <li class="filter" data-filter="dinner">Dinner</li>
+                            </ul><!-- @end #filter-list -->    
+                            <ul id="portfolio">
+                                <li class="item breakfast"><img src="static/images/food_icon01.jpg" alt="Food" >
+                                    <h2 class="white">$20</h2>
+                                </li>
+
+                                <li class="item dinner special"><img src="static/images/food_icon02.jpg" alt="Food" >
+                                    <h2 class="white">$20</h2>
+                                </li>
+                                <li class="item dinner breakfast"><img src="static/images/food_icon03.jpg" alt="Food" >
+                                    <h2 class="white">$18</h2>
+                                </li>
+                                <li class="item special"><img src="static/images/food_icon04.jpg" alt="Food" >
+                                    <h2 class="white">$15</h2>
+                                </li>
+                                <li class="item dinner"><img src="static/images/food_icon05.jpg" alt="Food" >
+                                    <h2 class="white">$20</h2>
+                                </li>
+                                <li class="item special"><img src="static/images/food_icon06.jpg" alt="Food" >
+                                    <h2 class="white">$22</h2>
+                                </li>
+                                <li class="item desert"><img src="static/images/food_icon07.jpg" alt="Food" >
+                                    <h2 class="white">$32</h2>
+                                </li>
+                                <li class="item desert breakfast"><img src="static/images/food_icon08.jpg" alt="Food" >
+                                    <h2 class="white">$38</h2>
+                                </li>
+                            </ul><!-- @end #portfolio -->
+                        </div><!-- @end #w -->
+                    </div>
+                </div>
+            </div>  
+        </section>
+        
+    <!-- ============ Reservation  ============= -->
+
+        <section  id="reservation"  class="description_content">
+            <div class="featured background_content">
+                <h1 style="font-size: 3.5em !important;"> 12:30 PM to 12:00 AM <br> (7 days a week)</h1>
+            </div>
+            <!-- <div class="text-content container"> 
+                <div class="inner contact">
+                   Form Area -->
+                    <div class="contact-form">
+                        <!-- Form -->
+                        <div id="reserveFormResponse"></div>
+                    </div><!-- End Contact Form Area -->
+                </div><!-- End Inner -->
+            </div> 
+        </section>
+
+
+    <!-- ============ About Us ============= -->
+
+        <section id="story" class="description_content">
+            <div class="text-content container">
+                <div class="col-md-6">
+                    <h1>About us</h1>
+                    <div class="fa fa-cutlery fa-2x"></div>
+                    <p class="desc-text">24 Hours italian restaurant is a place for simplicity. Good food service. Simple is the name of the game, and we’re good at finding it in all the right places, even in your dining experience. The home of taste in west drayton.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-section">
+                       <img src="static/images/kabob.jpg" width="250" height="220">
+                       <img src="static/images/limes.jpg" width="250" height="220">
+                       <div class="img-section-space"></div>
+                       <img src="static/images/radish.jpg"  width="250" height="220">
+                       <img src="static/images/corn.jpg"  width="250" height="220">
+                   </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- ============ Contact Section  ============= -->
+
+        <section id="contact">
+            <!-- <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.664063989472!2d91.8316103150038!3d24.909437984030877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37505558dd0be6a1%3A0x65c7e47c94b6dc45!2sTechnext!5e0!3m2!1sen!2sbd!4v1444461079802" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div> -->
+            <div class="container">
+
+                <div class="row">
+                    <h3 class="text-center" style="margin-top: 100px;">Contact Us</h3>
+
+                    <form id="contactForm" onsubmit="sendEmail()" >
+                        <!-- Left Inputs -->
+                        <div class="col-md-6 ">
+                            <div class="input-group">       
+                                <input class="form form-control" type="text" placeholder="Name" name="name" id="txtname" required>
+                            </div>
+                            <div class="input-group">       
+                                <input class="form form-control" name="email" type="email" placeholder="Email address" id="txtemail" required>
+                            </div>
+                            <div class="input-group">       
+                                <input class="form form-control" type="tel" placeholder="Phone number" id="txtnumber" name="number">
+                            </div>
+                            
+                        </div><!-- End Left Inputs -->
+
+
+                        <!-- Right Inputs -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <textarea class="form form-control" rows="9" placeholder="Write Message" name="message" id="txtmessage"></textarea>
+                            </div>
+                            <button id="cfsubmit" type="submit" class="text-center form-btn form-btn">Send your Message</button>
+                        
+                        </div><!-- End Contact Form Area -->
+                </form>
+                <div id="contactFormResponse"></div>
+
+                       
+            </div>
+        </section>
+
+{% endblock %}
